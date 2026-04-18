@@ -1,13 +1,12 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, startTransition, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import {
   Menu,
   X,
   Accessibility,
-  Mountain,
   Home,
   ChevronRight,
 } from "lucide-react";
@@ -68,7 +67,7 @@ export default function Header() {
   }, []);
 
   useEffect(() => {
-    setMobileOpen(false);
+    startTransition(() => setMobileOpen(false));
   }, [pathname]);
 
   const closeMobile = useCallback(() => setMobileOpen(false), []);

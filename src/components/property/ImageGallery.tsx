@@ -1,12 +1,11 @@
 "use client";
 
-import { useState, useCallback } from "react";
+import { useState, useCallback, useMemo } from "react";
 import {
   Dialog,
   DialogContent,
   DialogTitle,
 } from "@/components/ui/dialog";
-import { Button } from "@/components/ui/button";
 import { ChevronLeft, ChevronRight, X, Expand } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -19,7 +18,11 @@ export default function ImageGallery({ images, title }: ImageGalleryProps) {
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [activeIndex, setActiveIndex] = useState(0);
 
-  const displayImages = images.length > 0 ? images : [];
+  const displayImages = useMemo(
+    () => (images.length > 0 ? images : []),
+    [images]
+  );
+  const imageCount = displayImages.length;
   const mainImage = displayImages[0];
   const thumbImages = displayImages.slice(1, 5);
 
@@ -27,12 +30,12 @@ export default function ImageGallery({ images, title }: ImageGalleryProps) {
     (dir: -1 | 1) => {
       setActiveIndex((prev) => {
         const next = prev + dir;
-        if (next < 0) return displayImages.length - 1;
-        if (next >= displayImages.length) return 0;
+        if (next < 0) return imageCount - 1;
+        if (next >= imageCount) return 0;
         return next;
       });
     },
-    [displayImages.length]
+    [imageCount]
   );
 
   const openLightbox = (index: number) => {

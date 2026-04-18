@@ -5,6 +5,7 @@ import {
   useCallback,
   useContext,
   useEffect,
+  startTransition,
   useState,
   type ReactNode,
 } from "react";
@@ -24,8 +25,10 @@ export function SeniorModeProvider({ children }: { children: ReactNode }) {
   useEffect(() => {
     const stored = localStorage.getItem(STORAGE_KEY);
     if (stored === "true") {
-      setSeniorMode(true);
-      document.documentElement.setAttribute("data-senior-mode", "true");
+      startTransition(() => {
+        setSeniorMode(true);
+        document.documentElement.setAttribute("data-senior-mode", "true");
+      });
     }
   }, []);
 

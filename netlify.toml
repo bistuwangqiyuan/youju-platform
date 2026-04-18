@@ -6,6 +6,8 @@
 
 [build.environment]
   NODE_VERSION = "22"
+  # Netlify sets NODE_ENV=production during install; devDependencies are required for Tailwind/PostCSS and the Next plugin.
+  NPM_CONFIG_PRODUCTION = "false"
 
 [[plugins]]
   package = "@netlify/plugin-nextjs"
