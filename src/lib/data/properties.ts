@@ -1,21 +1,10 @@
 import type { Property } from "@/lib/types";
+import { UNSPLASH_INTERIOR_IDS, unsplashImage, unsplashImages } from "@/lib/unsplash";
 
-const unsplashInterior = (id: number) =>
-  `https://images.unsplash.com/photo-${id}?w=800&h=600&fit=crop`;
-
-const interiorPhotos = [
-  "1502672260266-1c1ef2d93688",
-  "1560448204771-d60f8975e2e6",
-  "1522771739-6e4b6b2b2b0a",
-  "1586023492125-27b2c045efd7",
-  "1600585154340-be6161a56a0c",
-  "1600607687939-ce8a6c25118c",
-  "1600566753190-17f0baa2a6c4",
-  "1600210492486-724fe5c67fb0",
-];
+const COVER_ROTATION = UNSPLASH_INTERIOR_IDS.slice(0, 8);
 
 function makeImages(base: string[]): string[] {
-  return base.map((id) => `https://images.unsplash.com/photo-${id}?w=800&h=600&fit=crop`);
+  return unsplashImages(base, { w: 800, h: 600 });
 }
 
 export const properties: Property[] = [
@@ -29,8 +18,14 @@ export const properties: Property[] = [
       "位于大理古城北门外，步行10分钟即达古城。传统白族三坊一照壁建筑改造，保留原始建筑韵味的同时增添现代舒适设施。独立院落配备花园、茶室和专属工作间，300Mbps光纤网络。适合需要安静创作环境的数字游民和作家。",
     short_description: "白族院落改造，独立花园+工作间，300M光纤",
     property_type: "courtyard",
-    cover_image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&h=600&fit=crop",
-    images: makeImages(["1600585154340-be6161a56a0c", "1502672260266-1c1ef2d93688", "1560448204771-d60f8975e2e6", "1586023492125-27b2c045efd7", "1600210492486-724fe5c67fb0"]),
+    cover_image: unsplashImage("1600585154340-be6161a56a0c", { w: 800, h: 600 }),
+    images: makeImages([
+      "1600585154340-be6161a56a0c",
+      "1502672260266-1c1ef2d93688",
+      "1512917774080-9991f1c4c750",
+      "1586023492125-27b2c045efd7",
+      "1600210492486-724fe5c67fb0",
+    ]),
     address: "大理古城北门外才村路18号",
     latitude: 25.6165,
     longitude: 100.1576,
@@ -59,7 +54,7 @@ export const properties: Property[] = [
     has_elevator: false,
     is_accessible: false,
     host_name: "李云飞",
-    host_avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face",
+    host_avatar: unsplashImage("1507003211169-0a1dd7228f2d", { w: 100, h: 100, faceCrop: true }),
     host_verified: true,
     created_at: "2024-03-15",
   },
@@ -71,8 +66,13 @@ export const properties: Property[] = [
     description: "位于大理市下关区洱海畔，270度全景落地窗，每天在洱海日出中醒来。精装修现代风格，配备人体工学办公桌椅，200Mbps光纤。楼下步行5分钟即达海边栈道，适合追求高品质生活的远程工作者。小区内有泳池和健身房。",
     short_description: "洱海全景公寓，日出观海，人体工学办公",
     property_type: "apartment",
-    cover_image: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&h=600&fit=crop",
-    images: makeImages(["1600607687939-ce8a6c25118c", "1600566753190-17f0baa2a6c4", "1502672260266-1c1ef2d93688", "1586023492125-27b2c045efd7"]),
+    cover_image: unsplashImage("1600607687939-ce8a6c25118c", { w: 800, h: 600 }),
+    images: makeImages([
+      "1600607687939-ce8a6c25118c",
+      "1600585154340-be6161a56a0c",
+      "1502672260266-1c1ef2d93688",
+      "1586023492125-27b2c045efd7",
+    ]),
     address: "大理市下关区洱海天域小区12栋",
     latitude: 25.5865,
     longitude: 100.2276,
@@ -101,7 +101,7 @@ export const properties: Property[] = [
     has_elevator: true,
     is_accessible: true,
     host_name: "张晓萌",
-    host_avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop&crop=face",
+    host_avatar: unsplashImage("1438761681033-6461ffad8d80", { w: 100, h: 100, faceCrop: true }),
     host_verified: true,
     created_at: "2024-02-10",
   },
@@ -113,8 +113,12 @@ export const properties: Property[] = [
     description: "大理古城人民路核心地段，独栋loft设计。一楼为开放式客厅和厨房，二楼为卧室和独立书房，屋顶露台可远眺苍山。楼下就是大理最热闹的咖啡馆和独立书店聚集区，步行可达所有古城设施。",
     short_description: "古城核心文艺loft，屋顶远眺苍山",
     property_type: "studio",
-    cover_image: "https://images.unsplash.com/photo-1522771739-6e4b6b2b2b0a?w=800&h=600&fit=crop",
-    images: makeImages(["1522771739-6e4b6b2b2b0a", "1560448204771-d60f8975e2e6", "1600585154340-be6161a56a0c"]),
+    cover_image: unsplashImage("1512917774080-9991f1c4c750", { w: 800, h: 600 }),
+    images: makeImages([
+      "1512917774080-9991f1c4c750",
+      "1586023492125-27b2c045efd7",
+      "1600585154340-be6161a56a0c",
+    ]),
     address: "大理古城人民路下段128号",
     latitude: 25.6025,
     longitude: 100.1676,
@@ -143,14 +147,14 @@ export const properties: Property[] = [
     has_elevator: false,
     is_accessible: false,
     host_name: "陈雨涵",
-    host_avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop&crop=face",
+    host_avatar: unsplashImage("1494790108377-be9c29b29330", { w: 100, h: 100, faceCrop: true }),
     host_verified: true,
     created_at: "2024-01-20",
   },
   {
     id: "prop-dali-004", host_id: "host-004", destination_id: "dest-dali",
     title: "喜洲古镇田园别墅 · 稻田景观+私家菜园", description: "位于大理喜洲古镇外围，被金黄稻田环绕的独栋别墅。三间卧室适合家庭或朋友同行。配备私家菜园，可体验种菜乐趣。距离喜洲古镇步行15分钟，感受原汁原味的白族田园生活。", short_description: "喜洲稻田别墅，私家菜园，田园生活体验",
-    property_type: "villa", cover_image: "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=800&h=600&fit=crop",
+    property_type: "villa", cover_image: unsplashImage("1600210492486-724fe5c67fb0", { w: 800, h: 600 }),
     images: makeImages(["1600210492486-724fe5c67fb0", "1600585154340-be6161a56a0c", "1502672260266-1c1ef2d93688"]),
     address: "大理喜洲镇周城村23号", latitude: 25.7365, longitude: 100.1376,
     bedrooms: 3, bathrooms: 2, max_guests: 6, area_sqm: 180,
@@ -159,13 +163,13 @@ export const properties: Property[] = [
     rating_living: 4.9, rating_internet: 4.2, rating_surroundings: 4.8, rating_safety: 4.5, rating_community: 4.3, rating_overall: 4.6, review_count: 18,
     tier: "youxuan", is_available: true, min_stay_days: 14, internet_speed_mbps: 100,
     has_kitchen: true, has_workspace: true, has_parking: true, has_elevator: false, is_accessible: false,
-    host_name: "赵明远", host_avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face", host_verified: true, created_at: "2024-04-01",
+    host_name: "赵明远", host_avatar: unsplashImage("1472099645785-5658abf4ff4e", { w: 100, h: 100, faceCrop: true }), host_verified: true, created_at: "2024-04-01",
   },
   {
     id: "prop-dali-005", host_id: "host-005", destination_id: "dest-dali",
     title: "才村码头湖景公寓 · 温馨一居室月租优选", description: "大理才村码头旁的温馨公寓，阳台直面洱海。一室一厅一厨一卫，配备齐全家电。楼下有菜市场和超市，生活便利。适合预算有限但追求品质的独行旅居者。", short_description: "才村码头湖景一居，生活便利月租优选",
-    property_type: "apartment", cover_image: "https://images.unsplash.com/photo-1560448204771-d60f8975e2e6?w=800&h=600&fit=crop",
-    images: makeImages(["1560448204771-d60f8975e2e6", "1586023492125-27b2c045efd7"]),
+    property_type: "apartment", cover_image: unsplashImage("1586023492125-27b2c045efd7", { w: 800, h: 600 }),
+    images: makeImages(["1512917774080-9991f1c4c750", "1586023492125-27b2c045efd7"]),
     address: "大理市才村码头翠雅苑5栋", latitude: 25.6265, longitude: 100.1876,
     bedrooms: 1, bathrooms: 1, max_guests: 2, area_sqm: 45,
     price_weekly: 840, price_monthly: 2400, price_quarterly: 6240,
@@ -173,7 +177,7 @@ export const properties: Property[] = [
     rating_living: 4.2, rating_internet: 4.3, rating_surroundings: 4.6, rating_safety: 4.3, rating_community: 4.1, rating_overall: 4.3, review_count: 56,
     tier: "youshi", is_available: true, min_stay_days: 7, internet_speed_mbps: 100,
     has_kitchen: true, has_workspace: false, has_parking: false, has_elevator: true, is_accessible: true,
-    host_name: "王小林", host_avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop&crop=face", host_verified: true, created_at: "2024-02-28",
+    host_name: "王小林", host_avatar: unsplashImage("1500648767791-00dcc994a43e", { w: 100, h: 100, faceCrop: true }), host_verified: true, created_at: "2024-02-28",
   },
   // Dali properties 6-15 (compact format)
   ...generateBatchProperties("dest-dali", "大理", 6, 15, [
@@ -192,8 +196,12 @@ export const properties: Property[] = [
   {
     id: "prop-xsbn-001", host_id: "host-101", destination_id: "dest-xsbn",
     title: "景洪市中心康养公寓 · 银发旅居之选", description: "位于景洪市中心繁华地段，步行即达农贸市场、医院和公园。精装两居室，配备无障碍设施和紧急呼叫按钮。小区环境清幽，绿化率高，设有太极广场和棋牌室。距离西双版纳州人民医院仅800米，为银发旅居者提供安心保障。", short_description: "景洪市中心康养公寓，无障碍设施，近医院",
-    property_type: "apartment", cover_image: "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c4?w=800&h=600&fit=crop",
-    images: makeImages(["1600566753190-17f0baa2a6c4", "1502672260266-1c1ef2d93688", "1586023492125-27b2c045efd7"]),
+    property_type: "apartment", cover_image: unsplashImage("1600585154340-be6161a56a0c", { w: 800, h: 600 }),
+    images: makeImages([
+      "1600585154340-be6161a56a0c",
+      "1502672260266-1c1ef2d93688",
+      "1586023492125-27b2c045efd7",
+    ]),
     address: "景洪市勐泐大道金版纳小区8栋", latitude: 22.0117, longitude: 100.7875,
     bedrooms: 2, bathrooms: 1, max_guests: 3, area_sqm: 85,
     price_weekly: 1400, price_monthly: 4000, price_quarterly: 10400,
@@ -201,7 +209,7 @@ export const properties: Property[] = [
     rating_living: 4.6, rating_internet: 4.2, rating_surroundings: 4.5, rating_safety: 4.8, rating_community: 4.7, rating_overall: 4.6, review_count: 45,
     tier: "youxuan", is_available: true, min_stay_days: 14, internet_speed_mbps: 100,
     has_kitchen: true, has_workspace: false, has_parking: true, has_elevator: true, is_accessible: true,
-    host_name: "刘阿姨", host_avatar: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&h=100&fit=crop&crop=face", host_verified: true, created_at: "2024-01-15",
+    host_name: "刘阿姨", host_avatar: unsplashImage("1544005313-94ddf0286df2", { w: 100, h: 100, faceCrop: true }), host_verified: true, created_at: "2024-01-15",
   },
   ...generateBatchProperties("dest-xsbn", "西双版纳", 2, 12, [
     { title: "告庄西双景傣式别墅 · 东南亚风情", type: "villa" as const, price: 8500, tier: "youxiang" as const, beds: 3, baths: 2, guests: 6, area: 160, lat: 21.9917, lng: 100.8075 },
@@ -220,8 +228,13 @@ export const properties: Property[] = [
   {
     id: "prop-hainan-001", host_id: "host-201", destination_id: "dest-hainan",
     title: "三亚湾海景大平层 · 270度无敌海景", description: "三亚湾路一线海景房，客厅和主卧均享270度海景。精装修，配备全套家电和厨具。小区自带泳池、健身房和花园，步行3分钟到沙滩。距三亚中心医院10分钟车程，适合追求高品质冬季旅居的银发群体和家庭。", short_description: "三亚湾一线海景，270度观海，泳池花园",
-    property_type: "apartment", cover_image: "https://images.unsplash.com/photo-1519046904884-53103b34b206?w=800&h=600&fit=crop",
-    images: makeImages(["1519046904884-53103b34b206", "1600607687939-ce8a6c25118c", "1600566753190-17f0baa2a6c4", "1502672260266-1c1ef2d93688"]),
+    property_type: "apartment", cover_image: unsplashImage("1519046904884-53103b34b206", { w: 800, h: 600 }),
+    images: makeImages([
+      "1519046904884-53103b34b206",
+      "1600607687939-ce8a6c25118c",
+      "1600585154340-be6161a56a0c",
+      "1502672260266-1c1ef2d93688",
+    ]),
     address: "三亚市三亚湾路凤凰水城12栋", latitude: 18.2628, longitude: 109.4619,
     bedrooms: 2, bathrooms: 2, max_guests: 4, area_sqm: 120,
     price_weekly: 3500, price_monthly: 10000, price_quarterly: 26000,
@@ -229,7 +242,7 @@ export const properties: Property[] = [
     rating_living: 4.8, rating_internet: 4.5, rating_surroundings: 4.9, rating_safety: 4.7, rating_community: 4.4, rating_overall: 4.7, review_count: 52,
     tier: "youxiang", is_available: true, min_stay_days: 14, internet_speed_mbps: 200,
     has_kitchen: true, has_workspace: true, has_parking: true, has_elevator: true, is_accessible: true,
-    host_name: "黄大伟", host_avatar: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=100&h=100&fit=crop&crop=face", host_verified: true, created_at: "2024-01-10",
+    host_name: "黄大伟", host_avatar: unsplashImage("1560250097-0b93528c311a", { w: 100, h: 100, faceCrop: true }), host_verified: true, created_at: "2024-01-10",
   },
   ...generateBatchProperties("dest-hainan", "海南", 2, 13, [
     { title: "万宁日月湾冲浪小屋 · 运动旅居", type: "house" as const, price: 4500, tier: "youshi" as const, beds: 1, baths: 1, guests: 2, area: 55, lat: 18.7128, lng: 110.3019 },
@@ -249,7 +262,7 @@ export const properties: Property[] = [
   {
     id: "prop-cd-001", host_id: "host-301", destination_id: "dest-chengdu",
     title: "高新区科技园精装公寓 · 共享办公3分钟", description: "位于成都高新区天府软件园旁，步行3分钟可达WeWork和多家共享办公空间。精装修一居室，500Mbps光纤，人体工学升降桌+Herman Miller座椅。楼下有星巴克、便利店和各类餐饮，生活极为便利。适合需要高效办公环境的远程工作者。", short_description: "高新区科技园旁，500M光纤+人体工学办公",
-    property_type: "apartment", cover_image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&h=600&fit=crop",
+    property_type: "apartment", cover_image: unsplashImage("1586023492125-27b2c045efd7", { w: 800, h: 600 }),
     images: makeImages(["1586023492125-27b2c045efd7", "1600607687939-ce8a6c25118c", "1502672260266-1c1ef2d93688"]),
     address: "成都市高新区天府三街凯德天府6栋", latitude: 30.5428, longitude: 104.0668,
     bedrooms: 1, bathrooms: 1, max_guests: 2, area_sqm: 55,
@@ -258,7 +271,7 @@ export const properties: Property[] = [
     rating_living: 4.7, rating_internet: 5.0, rating_surroundings: 4.6, rating_safety: 4.8, rating_community: 4.5, rating_overall: 4.7, review_count: 38,
     tier: "youxuan", is_available: true, min_stay_days: 7, internet_speed_mbps: 500,
     has_kitchen: true, has_workspace: true, has_parking: true, has_elevator: true, is_accessible: true,
-    host_name: "周鹏", host_avatar: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=100&h=100&fit=crop&crop=face", host_verified: true, created_at: "2024-03-01",
+    host_name: "周鹏", host_avatar: unsplashImage("1506794778202-cad84cf45f1d", { w: 100, h: 100, faceCrop: true }), host_verified: true, created_at: "2024-03-01",
   },
   ...generateBatchProperties("dest-chengdu", "成都", 2, 10, [
     { title: "宽窄巷子旁中式院落 · 闹中取静", type: "courtyard" as const, price: 7000, tier: "youxuan" as const, beds: 2, baths: 1, guests: 4, area: 100, lat: 30.6728, lng: 104.0568 },
@@ -292,11 +305,7 @@ function generateBatchProperties(
   }>
 ): Property[] {
   const destPrefix = destId.split("-")[1];
-  const coverImages = [
-    "1502672260266-1c1ef2d93688", "1560448204771-d60f8975e2e6", "1522771739-6e4b6b2b2b0a",
-    "1586023492125-27b2c045efd7", "1600585154340-be6161a56a0c", "1600607687939-ce8a6c25118c",
-    "1600566753190-17f0baa2a6c4", "1600210492486-724fe5c67fb0",
-  ];
+  const coverImages = [...COVER_ROTATION];
   const hostNames = ["王强", "李娜", "张伟", "刘芳", "陈磊", "杨丽", "赵刚", "孙静", "周明", "吴婷", "郑华", "马丽"];
   const hostAvatars = [
     "1507003211169-0a1dd7228f2d", "1438761681033-6461ffad8d80", "1494790108377-be9c29b29330",
@@ -328,10 +337,12 @@ function generateBatchProperties(
       description: `${destName}优质旅居房源，${cfg.title}。精心打造的居住空间，适合中长期旅居生活。配备齐全的生活设施，让旅居如同回家。`,
       short_description: cfg.title.split("·")[1]?.trim() || cfg.title,
       property_type: cfg.type,
-      cover_image: `https://images.unsplash.com/photo-${coverImages[imgIdx]}?w=800&h=600&fit=crop`,
-      images: [coverImages[imgIdx], coverImages[(imgIdx + 1) % coverImages.length], coverImages[(imgIdx + 2) % coverImages.length]].map(
-        (id) => `https://images.unsplash.com/photo-${id}?w=800&h=600&fit=crop`
-      ),
+      cover_image: unsplashImage(coverImages[imgIdx], { w: 800, h: 600 }),
+      images: makeImages([
+        coverImages[imgIdx],
+        coverImages[(imgIdx + 1) % coverImages.length],
+        coverImages[(imgIdx + 2) % coverImages.length],
+      ]),
       address: `${destName}市中心区域`,
       latitude: cfg.lat,
       longitude: cfg.lng,
@@ -360,7 +371,7 @@ function generateBatchProperties(
       has_elevator: cfg.type === "apartment",
       is_accessible: cfg.type === "apartment",
       host_name: hostNames[hostIdx],
-      host_avatar: `https://images.unsplash.com/photo-${hostAvatars[avatarIdx]}?w=100&h=100&fit=crop&crop=face`,
+      host_avatar: unsplashImage(hostAvatars[avatarIdx], { w: 100, h: 100, faceCrop: true }),
       host_verified: true,
       created_at: `2024-0${1 + (idx % 6)}-${10 + (idx % 20)}`,
     };

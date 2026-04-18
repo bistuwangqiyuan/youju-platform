@@ -12,7 +12,7 @@ export const destinations: Destination[] = [
     cover_image: "https://images.unsplash.com/photo-1528164344705-47542687000d?w=1200&h=800&fit=crop",
     gallery_images: [
       "https://images.unsplash.com/photo-1528164344705-47542687000d?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1580309237429-661ea0e1e7b0?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=600&fit=crop",
     ],
     latitude: 25.6065,
@@ -105,9 +105,9 @@ export const destinations: Destination[] = [
     description:
       "成都，天府之国的心脏，中国西南最重要的数字游民聚集地。这里拥有全国最好的美食文化、轻松悠闲的生活节奏和完善的城市基础设施。高新区和天府新区聚集了大量科技公司，为远程办公者提供了丰富的共享办公空间和社交场景。成都的茶馆文化、火锅美食和周边丰富的自然资源（青城山、都江堰、峨眉山），让旅居生活张弛有度。",
     short_description: "天府之国的悠闲旅居生活，美食与共享办公天堂",
-    cover_image: "https://images.unsplash.com/photo-1590534247854-e97d11ee8a46?w=1200&h=800&fit=crop",
+    cover_image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1200&h=800&fit=crop",
     gallery_images: [
-      "https://images.unsplash.com/photo-1590534247854-e97d11ee8a46?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1494548162494-384bba4ab999?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1540979388789-6cee28a1cdc9?w=800&h=600&fit=crop",
     ],
