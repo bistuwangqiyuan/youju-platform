@@ -1,5 +1,7 @@
+# Next.js on Netlify: @netlify/plugin-nextjs sets the effective publish/output;
+# publish = ".next" documents the Next build output for tooling that reads this file.
 [build]
-  command = "npm install --include=dev && npm run build"
+  command = "npm ci && npm run build"
   publish = ".next"
 
 [build.environment]
