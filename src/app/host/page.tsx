@@ -6,7 +6,6 @@ import {
   CalendarDays,
   Wallet,
   Star,
-  ChevronRight,
   Plus,
   Clock,
   User,
@@ -183,11 +182,6 @@ export default function HostDashboardPage() {
         <Card className="border-0 shadow-sm">
           <CardHeader className="flex-row items-center justify-between pb-4">
             <CardTitle className="text-lg">近期订单</CardTitle>
-            <Link href="/host/orders">
-              <Button variant="ghost" size="sm" className="gap-1 text-brand-green">
-                查看全部 <ChevronRight className="size-4" />
-              </Button>
-            </Link>
           </CardHeader>
           <CardContent className="space-y-3">
             {recentOrders.map((order) => (
@@ -229,11 +223,6 @@ export default function HostDashboardPage() {
         <Card className="border-0 shadow-sm">
           <CardHeader className="flex-row items-center justify-between pb-4">
             <CardTitle className="text-lg">最新评价</CardTitle>
-            <Link href="/host/reviews">
-              <Button variant="ghost" size="sm" className="gap-1 text-brand-green">
-                查看全部 <ChevronRight className="size-4" />
-              </Button>
-            </Link>
           </CardHeader>
           <CardContent className="space-y-3">
             {recentReviews.map((review) => (

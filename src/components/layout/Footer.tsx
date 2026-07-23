@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Mail, Phone, MapPin, QrCode } from "lucide-react";
+import { Mail, MapPin, QrCode } from "lucide-react";
 import { BRAND } from "@/lib/constants";
 
 const FOOTER_COLUMNS = [
@@ -8,17 +8,17 @@ const FOOTER_COLUMNS = [
     links: [
       { label: "发现房源", href: "/search" },
       { label: "热门目的地", href: "/destinations" },
-      { label: "房源等级", href: "/about#tiers" },
-      { label: "旅居指南", href: "/guide" },
+      { label: "房源等级", href: "/search" },
+      { label: "旅居指南", href: "/guides" },
     ],
   },
   {
     title: "社区",
     links: [
-      { label: "旅居日记", href: "/community?tab=diary" },
-      { label: "数字游民", href: "/community?tab=nomad" },
-      { label: "银发旅居", href: "/community?tab=silver" },
-      { label: "旅居攻略", href: "/community?tab=guide" },
+      { label: "旅居故事", href: "/community?category=story" },
+      { label: "数字游民", href: "/community?category=nomad" },
+      { label: "银发康养", href: "/community?category=silver" },
+      { label: "旅居攻略", href: "/community?category=guide" },
     ],
   },
   {
@@ -27,7 +27,7 @@ const FOOTER_COLUMNS = [
       { label: "关于悠居", href: "/about" },
       { label: "成为房东", href: "/host" },
       { label: "会员计划", href: "/membership" },
-      { label: "帮助中心", href: "/help" },
+      { label: "旅居社区", href: "/community" },
     ],
   },
 ] as const;
@@ -118,11 +118,21 @@ export default function Footer() {
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             <div className="flex items-center gap-3 text-[length:var(--font-size-sm)] text-brand-cream/60">
               <Mail className="size-4 shrink-0 text-brand-cream/40" />
-              <span>hello@youju.com</span>
+              <a
+                href="mailto:mingxinai@agentmail.to"
+                className="transition-colors hover:text-brand-cream"
+              >
+                mingxinai@agentmail.to
+              </a>
             </div>
             <div className="flex items-center gap-3 text-[length:var(--font-size-sm)] text-brand-cream/60">
-              <Phone className="size-4 shrink-0 text-brand-cream/40" />
-              <span>400-888-YOUJU (9658)</span>
+              <Mail className="size-4 shrink-0 text-brand-cream/40" />
+              <a
+                href="mailto:13426086861@139.com"
+                className="transition-colors hover:text-brand-cream"
+              >
+                13426086861@139.com
+              </a>
             </div>
             <div className="flex items-center gap-3 text-[length:var(--font-size-sm)] text-brand-cream/60">
               <MapPin className="size-4 shrink-0 text-brand-cream/40" />
@@ -152,12 +162,6 @@ export default function Footer() {
               className="transition-colors hover:text-brand-cream/70"
             >
               用户协议
-            </Link>
-            <Link
-              href="/sitemap"
-              className="transition-colors hover:text-brand-cream/70"
-            >
-              网站地图
             </Link>
           </div>
         </div>

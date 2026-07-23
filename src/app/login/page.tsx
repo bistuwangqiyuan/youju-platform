@@ -53,12 +53,12 @@ export default function LoginPage() {
                 >
                   密码
                 </label>
-                <Link
-                  href="/forgot-password"
+                <a
+                  href="mailto:mingxinai@agentmail.to?subject=%E6%89%BE%E5%9B%9E%E5%AF%86%E7%A0%81"
                   className="text-xs text-brand-green hover:text-brand-green-dark transition-colors"
                 >
                   忘记密码?
-                </Link>
+                </a>
               </div>
               <div className="relative">
                 <Input

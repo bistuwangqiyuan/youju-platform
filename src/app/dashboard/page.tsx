@@ -173,11 +173,6 @@ export default function DashboardPage() {
       <Card className="border-0 shadow-sm">
         <CardHeader className="flex-row items-center justify-between pb-4">
           <CardTitle className="text-lg">收藏房源</CardTitle>
-          <Link href="/dashboard/favorites">
-            <Button variant="ghost" size="sm" className="gap-1 text-brand-green">
-              查看全部 <ChevronRight className="size-4" />
-            </Button>
-          </Link>
         </CardHeader>
         <CardContent>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">

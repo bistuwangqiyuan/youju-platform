@@ -26,7 +26,7 @@ export default function CTASection() {
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link
-              href="/properties"
+              href="/search"
               className="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl bg-white text-primary font-semibold text-base hover:bg-brand-cream transition-colors shadow-lg"
             >
               <Search className="h-5 w-5" />
